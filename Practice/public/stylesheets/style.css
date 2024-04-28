@@ -1,0 +1,10 @@
+::-webkit-scrollbar{
+    display: none;
+}
+
+#test{
+    background-color: rgb(33, 0, 130);
+    background-color: #a52a2a;
+    background-color: #ff4500;
+    background-color: #82136c;
+}

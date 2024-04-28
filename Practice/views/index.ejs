@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home</title>
+</head>
+
+<body class="">
+    <div class="min-h-screen w-screen bg-zinc-900 p-4 text-white">
+        <div class="flex flex-col gap-[2vw] mt-[10vh] w-full">
+            <form action="/create" method="post" class="flex flex-col gap-[2vw] w-">
+                <input name="title" placeholder="task title goes here" type="text" id="task"
+                    class="rounded p-2 outline-none bg-black">
+                <textarea name="details" placeholder="write task description here" name="" id="" cols="30" rows="10"
+                    class="rounded p-2 outline-none bg-black"></textarea>
+                <button type="submit"
+                    class="bg-[rgb(33,0,130)] uppercase rounded-xl text-white font-bold py-[1vw] w-[250px] m-auto">save</button>
+            </form>
+        </div>
+        <div class="flex flex-wrap m-[5vw] gap-[2vw] w-full">
+
+            <% if(files.length> 0){ %>
+                <% files.forEach(function(file){ %>
+                    <div
+                        class="h-[10vw] bg-[#82135C] rounded-md py-[1vw] px-[1vw] flex flex-col items-start justify-between">
+                        <h1 class="text-[2.2vw] leading-[2vw]">
+                            <%= file %>
+                        </h1>
+                        <div class="text-[1.vw] flex items-center gap-[2.4vw]">
+                            <a target="_blank" href="/files/<%= file %>" class="text-blue-700 leading-[2vw]">READ
+                                MORE
+                            </a>
+                            <div>
+                                <a href="/edit/<%= file %>"
+                                    class="bg-[#ff4500] rounded-[2vw] py-[0.5vw] px-[1.5vw] text-white">edit</a>
+                                <a href="/delete/<%= file %>"
+                                    class="bg-[rgb(33,0,130)] rounded-[2vw] py-[0.5vw] px-[1.5vw] text-white">delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+                        <% }else{ %>
+                            <h1 class="text-[3vw] capitalize underline">no tasks yet</h1>
+                            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
