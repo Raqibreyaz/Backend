@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="w-screen h-screen bg-zinc-800 text-white">
+        <a href="/read" class="text-blue-400 p-[1vw] inline-block">all users</a>
+        <div class="flex items-center justify-center w-full h-[90%]">
+            <form action="/create" method="post" class="flex flex-col gap-[1vw] w-1/2 rounded-md bg-gray-800 p-[2vw]">
+                <h1 class="text-[3vw] mx-auto">Register</h1>
+                <input type="text" name="name" placeholder="Enter name"
+                    class="bg-zinc-600 outline-none border border-gray-700 p-[1vw] rounded-md">
+                <input type="email" name="email" placeholder="Enter email"
+                    class="bg-zinc-600 outline-none border border-gray-700 p-[1vw] rounded-md">
+                <input type="url" name="imageUrl" placeholder="Enter Image Url"
+                    class="bg-zinc-600 outline-none border border-gray-700 p-[1vw] rounded-md">
+                <button type="submit" class="bg-orange-500 rounded-md w-1/2 py-[0.5vw] mx-auto">Create User</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
