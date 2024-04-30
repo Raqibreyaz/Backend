@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="w-screen h-screen bg-zinc-900 flex items-center justify-center text-white">
+        <form action="/create" method="post" class="p-[2vw] flex-col flex gap-[1vw] w-1/2 ">
+            <h1 class="text-[2.6vw] mx-auto">Register</h1>
+            <input name="username" type="text" placeholder="Enter UserName"
+                class="outline-none p-[1vw] w-full bg-zinc-700 rounded-md">
+            <input name="email" type="email" placeholder="Enter Email"
+                class="outline-none p-[1vw] w-full bg-zinc-700 rounded-md">
+            <input name="password" type="password" placeholder="Enter Password"
+                class="outline-none p-[1vw] w-full bg-zinc-700 rounded-md">
+            <button type="submit" class="bg-orange-600 mx-auto w-1/2 rounded-md py-[0.5vw]">Create User</button>
+            <a href="/login" class="bg-blue-500 rounded-[2vw] w-1/4 flex justify-center mx-auto py-[0.5vw]">login</a>
+        </form>
+    </div>
+</body>
+
+</html>
