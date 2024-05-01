@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>profile</title>
+</head>
+
+<body>
+    <div class="w-screen min-h-screen bg-zinc-900 text-white p-[2vw] ">
+        <div class="w-full flex justify-between">
+            <div class="flex gap-[3vw]">
+                <div class="h-[30vw] w-[20vw] rounded-[5%] overflow-hidden">
+                    <img src="<%= user.imageUrl %>" alt="" class="h-full w-full relative z-12">
+                </div>
+                <div>
+                    <div class="text-[3vw] mb-[2vw]">
+                        <%= user.username %>
+                    </div>
+                    <div class="capitalize">total posts: <%= user.posts.length %>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="/logout" class="bg-red-500 font-semibold rounded-md text-[2vw] px-[1vw] py-[0.5vw]">logout</a>
+            </div>
+        </div>
+        <form action="/create-post" method="post" class="flex flex-col gap-[2vw] w-[70%] mt-[5vw] mb-[5vw]">
+            <h1 class="text-[3vw] capitalize">create a post</h1>
+            <textarea name="content" class="bg-zinc-800  p-[1vw] outline-none rounded-lg"
+                placeholder="Post content goes here"></textarea>
+            <input type="url" name="imageUrl" placeholder="Enter Post Image Url"
+                class="bg-zinc-800 p-[1vw] outline-none rounded-lg">
+            <button type="submit"
+                class="bg-blue-500 w-1/5 text-center rounded-xl font-semibold py-[0.7vw]">submit</button>
+        </form>
+        <div class="min-h-screen">
+
+            <h1 class="capitalize text-[3vw] mb-[2vw]">all posts</h1>
+
+            <div class="flex flex-wrap gap-[1.3vw]">
+
+                <% user.posts.forEach(function(post){ %>
+                    <div class="p-[2vw] border rounded-lg flex flex-col gap-[1vw]">
+                        <div class="h-[300px] w-[200px] border-gray-300 rounded-lg overflow-hidden">
+                            <img src="<%= post.imageUrl %>" alt="" class="w-full h-full">
+                        </div>
+                        <div>
+                            <%= post.content %>
+                        </div>
+                        <div class="flex justify-between">
+                            <div class="flex gap-[1.6vw]">
+                                <a href="/edit" class="text-zinc-400">edit</a>
+                                <a href="/delete" class="text-red-500">delete</a>
+                            </div>
+                            <div>
+                                <%= user.username %>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

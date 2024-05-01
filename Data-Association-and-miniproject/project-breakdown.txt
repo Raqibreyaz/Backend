@@ -1,0 +1,9 @@
+register
+login
+logout
+user creation 
+user updation
+post creation 
+post updation
+post like
+post delete

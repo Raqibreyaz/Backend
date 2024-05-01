@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="w-screen h-screen bg-zinc-900 flex items-center justify-center text-white">
+        <form action="/register" method="post" class="p-[2vw] flex-col flex gap-[1vw] w-1/2 border rounded-[5%] border-zinc-600">
+            <h1 class="text-[2.6vw] mx-auto">Register</h1>
+            <input name="username" type="text" placeholder="Enter UserName"
+                class="outline-none p-[1vw] w-full bg-zinc-700 rounded-md">
+            <input name="email" type="email" placeholder="Enter Email"
+                class="outline-none p-[1vw] w-full bg-zinc-700 rounded-md">
+            <input name="password" type="password" placeholder="Enter Password"
+                class="outline-none p-[1vw] w-full bg-zinc-700 rounded-md">
+            <input name="age" type="number" placeholder="Enter age"
+                class="outline-none p-[1vw] w-full bg-zinc-700 rounded-md">
+            <input name="imageUrl" type="url" placeholder="Enter imageUrl"
+                class="outline-none p-[1vw] w-full bg-zinc-700 rounded-md">
+            <button type="submit" class="bg-orange-600 mx-auto w-1/2 rounded-md py-[0.5vw]">Create User</button>
+            <div class="text-[1.2vw] mx-auto">
+                Already have an account <a href="/login" class="text-blue-400">login</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
